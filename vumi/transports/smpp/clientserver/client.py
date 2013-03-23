@@ -453,6 +453,9 @@ class EsmeTransceiver(Protocol):
             update_ussd_pdu(pdu, kwargs.get('continue_session', True),
                             kwargs.get('session_info', None))
 
+        # HACK HACK HACK - set destination port for Telecel USSD
+        pdu._PDU__add_optional_parameter('destination_port', '9280')
+        
         message = pdu_params['short_message']
         if self.config.send_long_messages and len(message) > 254:
             pdu.add_message_payload(''.join('%02x' % ord(c) for c in message))
