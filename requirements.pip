@@ -14,4 +14,5 @@ python-smpp
 pytz
 riakasaurus>=1.0.9
 riak
-https://github.com/dustin/twitty-twister/tarball/master#egg=twittytwister-0.1.0
+# Not needed for 911Assist; causing obscure setup errors therefore commented out
+# https://github.com/dustin/twitty-twister/tarball/master#egg=twittytwister-0.1.1
